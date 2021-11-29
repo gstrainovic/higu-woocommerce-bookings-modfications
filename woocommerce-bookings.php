@@ -1,12 +1,13 @@
 <?php
+
 /**
- * Plugin Name: WooCommerce Bookings
- * Plugin URI: https://woocommerce.com/products/woocommerce-bookings/
+ * Plugin Name: WooCommerce Bookings with calendar categories filter 
+ * Plugin URI: https://github.com/gstrainovic/higu-woocommerce-bookings-modfications
  * Description: Setup bookable products such as for reservations, services and hires.
  * Version: 1.15.48
- * Author: WooCommerce
- * Author URI: https://woocommerce.com
- * Text Domain: woocommerce-bookings
+ * Author: WooCommerce & Strainovic IT
+ * Author URI: https://strainovic-it.ch
+ * Text Domain: woocommerce-bookings-with-calendar-categories-filter
  * Domain Path: /languages
  * Tested up to: 5.8
  * WC tested up to: 5.8
