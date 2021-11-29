@@ -43,6 +43,25 @@ global $wp_version;
 					}
 					?>
 				</select>
+			</span>
+			<!-- // custom code by gost -->
+			<span class="calendar-bookings-filter-container">
+				<select class="wc-enhanced-select" name="filter_categories_resource" style="width: 200px;">
+					<option value=""><?php esc_html_e('Alle Standorte', 'woocommerce-bookings'); ?></option>
+					<?php
+					$categories_filters = get_wc_categories();
+					if ($categories_filters) {
+						foreach ($categories_filters as $filter_id => $filter_name) {
+					?>
+							<option value="<?php echo esc_attr($filter_id); ?>" <?php selected($category_filter, $filter_id); ?>>
+								<?php echo esc_html($filter_name); ?>
+							</option>
+					<?php
+						}
+					}
+					?>
+				</select>
+			</span>
 		</div>
 	</div>
 	<?php if (in_array($view, array('month', 'schedule'), true)) : ?>

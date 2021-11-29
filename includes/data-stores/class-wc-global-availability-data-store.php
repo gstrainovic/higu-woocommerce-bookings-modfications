@@ -351,6 +351,10 @@ class WC_Global_Availability_Data_Store extends WC_Data_Store_WP {
 	 * @return array
 	 */
 	public static function get_events_in_date_range( $start_date, $end_date, $product_or_resource_ids = 0, $check_in_cart = true ) {
+		$category_filter = isset($_REQUEST['filter_categories_resource']) ? absint($_REQUEST['filter_categories_resource']) : '';
+		if ($category_filter)  {
+			$product_or_resource_ids = array_map(fn ($x) => getProductIDsByCategoryID($x), $product_or_resource_ids);
+		}
 		$bookings              = WC_Booking_Data_Store::get_bookings_in_date_range( $start_date, $end_date, $product_or_resource_ids, $check_in_cart );
 		$min_date              = date( 'Y-m-d', $start_date );
 		$max_date              = date( 'Y-m-d', $end_date );
